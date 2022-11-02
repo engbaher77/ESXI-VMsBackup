@@ -1,24 +1,56 @@
 import os
+import string
 import subprocess
-import paramiko
+#import paramiko
 import urllib.parse
 import configparser
 import time
-from datetime import datetime
+import datetime
+
+
 
 Servers = []
 Users = []
 PW = []
 Excluded = []
+_days = []
 
 t = 5
 
-
+#read Time
 def header():
+    hh=configparser.ConfigParser()
+    hh.read("config.ini")
+    gg = hh.sections()
+    g = gg[4]
+    fc = hh.items(g)
+
+
+    for days , lay in fc:
+        _days.append(lay)
+        
+
+
+
+
     print('\n\n')
     print("This software build for AiActive Techonolgies SAE,")
     print("Programmed By Baher Elnaggar \u00a92018")
     print('----------------------------------------\n\n')
+
+    import datetime
+    from datetime import date
+
+    d = datetime.date.today().day
+
+
+
+
+    if str(d) in _days:
+         return
+    else:
+         exit()
+
 
 
 # Read Config.ini
@@ -34,6 +66,7 @@ def configuration():
     _Servers = config.items(_Servers)
     for srv in _Servers:
         Servers.append(srv)
+
 
     # Read Users Section
     _Users = section[1]
@@ -52,6 +85,7 @@ def configuration():
     _excluded = config.items(_excluded)
     for key, value in _excluded:
         Excluded.append(value)
+
 
     # for name, value in Servers_IP:
     #     print ('  %s = %s' % (name, value))
@@ -226,4 +260,3 @@ if __name__ == '__main__':
 
             # Backup vm
             exportVM()
-
