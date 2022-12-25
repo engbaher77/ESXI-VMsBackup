@@ -15,7 +15,7 @@ Open Source Project to Schedule Backup VMs in Multiple ESXI Servers
 
 # Prerequestes
 #### VMWARE OVF Tool
-##### Download Link: https://github.com/engbaher77/ESXI-VMsBackup.git
+##### Download Link: [https://github.com/engbaher77/ESXI-VMsBackup.git](https://developer.vmware.com/web/tool/4.4.0/ovf)
 
 
 # Usage
