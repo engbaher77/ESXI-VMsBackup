@@ -13,6 +13,10 @@ Open Source Project to Schedule Backup VMs in Multiple ESXI Servers
 ### 4. Exclude VMs from Backup
 
 
+# Prerequestes
+#### VMWARE OVF Tool
+##### Download Link: https://github.com/engbaher77/ESXI-VMsBackup.git
+
 
 # Usage
 All Configuration in config.ini file
